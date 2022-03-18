@@ -49,7 +49,7 @@ public class ArrayBag<E> {
      * 가방이 현재 비어있는지를 확인한다.
      * @return 가방이 비었으면 true, 비어있지 않다면 false
      */
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return size()==0;
     }
 
