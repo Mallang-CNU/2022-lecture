@@ -120,16 +120,20 @@ public class AppController {
     }
 
 
-
-
+    /**
+     * 가방 속 상태를 보여준다
+     */
     private void showStatistics() {
-
         AppView.outputLine("가방에 들어 있는 동전의 개수: " + this.coinBag().size());
         AppView.outputLine("동전 중 가장 큰 값: " + this.maxCoinValue());
         AppView.outputLine("모든 동전 값의 합: " + this.sumOfCoinValue());
         AppView.outputLine("");
     }
 
+    /**
+     * 가방속 동전의 합을 구한다
+     * @return 동전의 총 합
+     */
     private int sumOfCoinValue() {
         int sum = 0;
         for (int i = 0; i < this.coinBag().size(); i++) {
@@ -138,6 +142,10 @@ public class AppController {
         return sum;
     }
 
+    /**
+     * 가방속 가장 값이 큰 동전의 값을 구한다
+     * @return 가장 큰 동전의 값
+     */
     private int maxCoinValue() {
         int maxValue = 0;
         for (int i = 0; i < this.coinBag().size(); i++) {

@@ -67,12 +67,13 @@ public class ArrayBag<E> {
      * @return 포함되어 있다면 true, 포함되어있지 않다면 false
      */
     public boolean doesContain(E anElement) {
-        for (int i = 0; i < size(); i++) {
+        boolean found = false;//원소를 찾으면 true 로 변경
+        for (int i = 0; i < size() && !found; i++) {//_elements[] 의 값을 모두 확인하였거나 found 가 true 이면 찾는것을 종료
             if(anElement.equals(this.elements()[i])){
-                return true;
+                found = true;
             }
         }
-        return false;
+        return found; // found 값을반환
     }
 
     /**
@@ -81,10 +82,10 @@ public class ArrayBag<E> {
      * @return 가방 속에 포함된 주어진 원소의 개수
      */
     public int frequencyOf(E anElement) {
-        int frequencyCount = 0;
+        int frequencyCount = 0; // 개수(frequency)를 저장할 frequencyCount 를 선언하여 0 으로초기화
         for (int i = 0; i < size(); i++) {
-            if(anElement.equals(elements()[i])){
-                frequencyCount++;
+            if(anElement.equals(elements()[i])){ //입력받은 값과 원소의 값이 같으면
+                frequencyCount++; //frequencyCount 1 중가
             }
         }
         return frequencyCount;
@@ -111,7 +112,7 @@ public class ArrayBag<E> {
      * @return 가방이 비어있거나, 주어진 원소를 가방에서 찾지 못한다면 false 를 반환한다.
      */
     public boolean remove(E anElement){
-        if(isEmpty()) return false;
+        if(isEmpty()) return false;  //_elements[] 가 비어있는 경우 false 를 돌려준다
 
         int foundIndex = -1;//제거할 원소가 존재하는 위치(인덱스)
 
