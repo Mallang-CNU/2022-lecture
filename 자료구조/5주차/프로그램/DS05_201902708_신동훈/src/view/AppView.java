@@ -19,7 +19,7 @@ public class AppView {
         System.out.println(message);
     }
     public static void output(String message){
-
+        System.out.print(message);
     }
 
     public static int inputInteger() throws NumberFormatException {
