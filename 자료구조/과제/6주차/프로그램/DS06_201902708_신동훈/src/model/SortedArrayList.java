@@ -73,13 +73,19 @@ public class SortedArrayList <E extends Comparable<E>>{
     }
 
 
+    /**
+     * 원소를 오름차순으로 정렬하여 삽입한다.
+     * @param anElement 삽입할 원소
+     * @return 삽입에 성공하면 true
+     */
     public boolean add(E anElement){
         if (this.isFull()) {
             return false;
         }
+
+        //이분 탐색 시작
         int start = 0;
         int end = this.size()-1;
-
         while (start < end){
             int mid = (start + end) >>> 1;
 
@@ -89,15 +95,13 @@ public class SortedArrayList <E extends Comparable<E>>{
                 start = mid + 1;
             }
 
-        }
+        }//이분 탐색 종료
         int anOrder = end+1;
 
         this.makeRoomAt(anOrder);
         this.elements()[anOrder] = anElement;
         this.setSize(this.size() +1);
         return true;
-
-
     }
 
     public E max(){

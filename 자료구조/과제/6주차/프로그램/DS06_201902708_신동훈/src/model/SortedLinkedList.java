@@ -44,7 +44,11 @@ public class SortedLinkedList <E extends Comparable<E>> {
     public boolean isFull() {
         return false;
     }
-
+    /**
+     * 원소를 오름차순으로 정렬하여 삽입한다.
+     * @param anElement 삽입할 원소
+     * @return 삽입에 성공하면 true
+     */
     public boolean add(E anElement) {
         if(this.isFull()) {
             return false;

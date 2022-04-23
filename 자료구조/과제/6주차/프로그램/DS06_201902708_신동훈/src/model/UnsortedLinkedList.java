@@ -43,7 +43,11 @@ public class UnsortedLinkedList<E extends Comparable<E>> {
         return false;
     }
 
-
+    /**
+     * 원소를 삽입한다.
+     * @param anElement 삽입할 원소
+     * @return 삽입에 성공하면 true
+     */
     public boolean add(E anElement){
         LinkedNode<E> nodeForAdd = new LinkedNode<>(anElement, null);
         nodeForAdd.setNext(this.head());//추가할 노드의 다음 노드에 현재의 head Node 를 설정한다.
